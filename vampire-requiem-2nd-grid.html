@@ -5,24 +5,57 @@
 </head>
 <body>
 
-<div class="sheet-wrapper">
-    <div class="sheet-header sheet-header-left">
-        <span class="sheet-header-label">Nom :</span><input type="text" name="attr_character_name" placeholder="nom du personnage">
-        <span class="sheet-header-label">Joueur :</span><input type="text" name="attr_player_name" placeholder="joueur">
-        <span class="sheet-header-label">Chronique :</span><input type="text" name="attr_chronicle_name" placeholder="chronique">
-    </div>
-    <div class="sheet-header sheet-header-main">
-        <span class="sheet-header-label">Masque :</span><input type="text" name="attr_mask" placeholder="masque">
-        <span class="sheet-header-label">&Eacute;légie :</span><input type="text" name="attr_dirge" placeholder="élégie">
-        <span class="sheet-header-label">Concept :</span><input type="text" name="attr_concept" placeholder="concept">
-    </div>
-    <div class="sheet-header sheet-header-right">
-        <span class="sheet-header-label">Clan :</span><input type="text" name="attr_clan" placeholder="clan">
-        <span class="sheet-header-label">Lignée :</span><input type="text" name="attr_bloodline" placeholder="lignée">
-        <span class="sheet-header-label">Ligue :</span><input type="text" name="attr_covenant" placeholder="ligue">
-    </div>
-    <div class="sheet-header sheet-break sheet-bg-black sheet-title">
-        Attributs
+<div class="sheet-container">
+    <div class="sheet-wrapper">
+        <div class="sheet-header sheet-header-left">
+            <span class="sheet-label">Nom :</span><input type="text" name="attr_character_name" placeholder="nom du personnage">
+            <span class="sheet-label">Joueur :</span><input type="text" name="attr_player_name" placeholder="joueur">
+            <span class="sheet-label">Chronique :</span><input type="text" name="attr_chronicle_name" placeholder="chronique">
+        </div>
+        <div class="sheet-header sheet-header-main">
+            <span class="sheet-label">Masque :</span><input type="text" name="attr_mask" placeholder="masque">
+            <span class="sheet-label">&Eacute;légie :</span><input type="text" name="attr_dirge" placeholder="élégie">
+            <span class="sheet-label">Concept :</span><input type="text" name="attr_concept" placeholder="concept">
+        </div>
+        <div class="sheet-header sheet-header-right">
+            <span class="sheet-label">Clan :</span><input type="text" name="attr_clan" placeholder="clan">
+            <span class="sheet-label">Lignée :</span><input type="text" name="attr_bloodline" placeholder="lignée">
+            <span class="sheet-label">Ligue :</span><input type="text" name="attr_covenant" placeholder="ligue">
+        </div>
+        <div class="sheet-header sheet-fullbreak">
+            Attributs
+        </div>
+
+        <div class="sheet-attr sheet-attr-offset">
+            <span class="sheet-attr-helper">pouvoir</span>
+            <span class="sheet-attr-helper">finesse</span>
+            <span class="sheet-attr-helper">résistance</span>
+        </div>
+        <div class="sheet-attr sheet-attr-left">
+            <div class="sheet-attr-item">Intelligence</div>
+            <div class="sheet-radio-list">
+                <input type="radio" class="sheet-zero" name="attr_int" value="0" checked="checked" /><span></span>
+                <input type="radio" name="attr_int" value="1" /><span></span>
+                <input type="radio" name="attr_int" value="2" /><span></span>
+                <input type="radio" name="attr_int" value="3" /><span></span>
+                <input type="radio" name="attr_int" value="4" /><span></span>
+                <input type="radio" name="attr_int" value="5" /><span></span>
+            </div>
+            <div class="sheet-break"></div>
+        </div>
+        <div class="sheet-header sheet-attr-main">
+            <span class="sheet-attr-label">Force</span>
+            <span class="sheet-attr-label">Dextérité</span>
+            <span class="sheet-attr-label">Vigueur</span>
+        </div>
+        <div class="sheet-header sheet-attr-right">
+            <span class="sheet-attr-label">Présence</span>
+            <span class="sheet-attr-label">Manipulation</span>
+            <span class="sheet-attr-label">Calme</span>
+        </div>
+        <div class="sheet-header sheet-break sheet-bg-black sheet-title">
+            Attributs
+        </div>
     </div>
 </div>
 </body>
