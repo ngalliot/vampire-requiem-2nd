@@ -4,164 +4,184 @@
     grid-template-columns: repeat(12, [col-start] 1fr);
     grid-gap: 1px;
     background-color: transparent;
-    margin: 200px 95px 100px 95px;
+    margin: 170px 90px 100px 90px;
 }
 
-.sheet-container {
-    width: 1200px;
-    margin: 0 auto;
+.sheet-container {width: 1015px; margin: 0 auto;}
+.sheet-justifycenter {justify-content: center;}
 
-}
+.sheet-left  {grid-column: col-start 1 / span 4; display: flex; flex-wrap: wrap;}
+.sheet-main  {grid-column: col-start 5 / span 4; display: flex; flex-wrap: wrap;}
+.sheet-right {grid-column: col-start 9 / span 4; display: flex; flex-wrap: wrap;}
 
-.sheet-header {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    padding-right: 30px;
-}
+.sheet-attr-offset  {grid-column: col-start 1 / span 2; display: flex; flex-wrap: wrap; padding: 5px 10px;}
+.sheet-attr-left    {grid-column: col-start 3 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 10px;margin-right:10px}
+.sheet-attr-main    {grid-column: col-start 6 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 10px;margin-right:10px}
+.sheet-attr-right   {grid-column: col-start 9 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 10px;margin-right:10px}
+.sheet-attr-end		{grid-column: col-start 12/ span 1; display: flex; flex-wrap: wrap; padding: 5px 10px;}
 
-.sheet-header-left  {grid-column: col-start 1 / span 4; display: flex; }
-.sheet-header-main  {grid-column: col-start 5 / span 4; display: flex; }
-.sheet-header-right {grid-column: col-start 9 / span 4; display: flex; }
 
-.sheet-attr-offset  {grid-column: col-start 1 / span 2; display: flex; }
-.sheet-attr-left    {grid-column: col-start 3 / span 3; display: flex; border: 1px solid black; align-items: bottom;}
-.sheet-attr-main    {grid-column: col-start 6 / span 3; display: flex; }
-.sheet-attr-right   {grid-column: col-start 9 / span 3; display: flex; }
-
-.sheet-fullbreak        {grid-column: col-start 1 / span 12; display: flex; background: url("./images/break.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 20px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;}
+.sheet-fullbreak    {grid-column: col-start 1 / span 12; display: flex; background: url("./images/break.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 20px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;}
+.sheet-onethird-break    {grid-column: col-start 1 / span 4; display: flex; background: url("./images/breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;}
+.sheet-twothird-break    {grid-column: col-start 5 / span 8; display: flex; background: url("./images/breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;}
 
 .sheet-break {flex-basis: 100%;height: 0;}
+.sheet-height20 {height:23px;}
+.sheet-height10 {height:15px;}
+.sheet-height30 {height:30px;}
 
-
-
-/*-----Text fields-----*/
-
+/*-----Generic fields-----*/
 .sheet-label {
-    width:80px;
-    display: block;
-    text-align: right;
-    margin: 10px 10px 10px 10px;
-    float: left;
-}
-
-input[type="text"] {
-    background: transparent;
-    display: block;
-    width:190px;
-    border: none;
-    border-bottom: 1px dashed #83A4C5;
-    outline: none;
-    padding: 0px 0px 0px 5px;
-}
-
-
-/*-----radio boxes-----*/
-
-.sheet-attr-item {
-    height: 20px;
-    flex: 0 0 120px;
-}
+    flex: 0 0 80px;
+    align-items: bottom; text-align: right; padding-bottom: 10px;}
 
 .sheet-radio-list {
-    flex: 0 0 150px;
-    height: 20px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    display: flex;
+    flex: 1;
+    margin: 0; padding: 0; align-items:center;}
+
+input[type="text"] {
+    background: transparent; border: none; border-bottom: 1px dashed #83A4C5; outline: none; padding-left: 5px;}
+
+/* ----- Header ----- */
+.sheet-header-value {
+    flex: 0 0 100px;    
+    padding-bottom: 10px;}
+
+/* ----- Attributes ----- */
+.sheet-attr-helper {
+    flex: 0 0 80px;
+    font-style: italic;
+    color: #666;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+}
+.sheet-attr-item {
+    display: flex;
+    align-items:center; 
+    flex: 0 0 90px;
+    height: 30px;
 }
 
 
 /* -----Hide actual radio----- */
-.sheet-radio-list input
-{
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-/*    top: 5px;
-    position: relative;
-    left: 6px;
-    margin: -10px;
-*/
-    cursor: pointer;
-    z-index: 1;
-}
-
-.sheet-radio-list input[type="radio"] {
-    clear: none;
-    float: left;
-    margin: 2px 2px;
-    height: 13px;
-    width: 13px;
-    padding: 0px;
-    text-align: center;
-    vertical-align: middle;
-    color:black;
-    content: "•";
-    font-size: 2em;
-}
+input[type="radio"] {width: 16px; height: 16px; z-index: 1; position: relative; top: 5px;left: 6px; margin: -7px; opacity: 0;cursor: hand;}
 
 /* -----Fake radio----- */
-input.sheet-normal[type="radio"] + span::before
-{
-    margin-right: 2px;
-    border: solid 1px #a8a8a8;
-    line-height: 14px;
+.sheet-radio-list input[type="radio"] + span::before {
+    margin-right: 1px;
+    border: solid 1px #000;
+    line-height: 11px;
     text-align: center;
     display: inline-block;
     vertical-align: middle;
-    
+
     -moz-box-shadow: 0 0 2px #ccc;
     -webkit-box-shadow: 0 0 2px #ccc;
     box-shadow: 0 0 2px #ccc;
     
+    background: #000;
+
+    color:black;
+    content: "•";
+    width: 10px;
+    height: 10px;
+    font-size: 1em;
+    
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;}
+
+
+/* -----Remove dot from all radios _after_ selected one----- */
+.sheet-radio-list input[type="radio"]:checked ~ input[type="radio"] + span::before {content: "";   
+    border: solid 1px #a8a8a8;
     background: #f6f6f6;
     background: -moz-radial-gradient(#f6f6f6, #dfdfdf);
     background: -webkit-radial-gradient(#f6f6f6, #dfdfdf);
     background: -ms-radial-gradient(#f6f6f6, #dfdfdf);
     background: -o-radial-gradient(#f6f6f6, #dfdfdf);
     background: radial-gradient(#f6f6f6, #dfdfdf);
-    
-    color:black;
-    content: "•";
-    width: 12px;
-    height: 12px;
-    font-size: 3em;
-    
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
 }
 
-/* -----Remove dot from all radios _after_ selected one----- */
-input.sheet-normal[type="radio"]:checked ~ input.sheet-normal[type="radio"] + span::before
-{    
-    content: "";
-}
-
-
-
-
-.sheet-radio-list input.sheet-radio-list[type="radio"]:hover + span::before
-{
-    opacity: 1;
-}
-
-.sheet-zero
-{
+.sheet-radio-list input[type="radio"]:hover + span::before {opacity: 1;}
+input.sheet-zero[type="radio"] + span::before {
     font-size: 12px;
     content: "✖";
-    opacity: 0.25;
+    opacity: 0.12;
+    background: transparent;
+    border: none;
+    margin-right: 4px;
+    margin-top: 2px;
 }
+
+input.sheet-zero[type="radio"]:checked + span::before {opacity: 0;background: transparent;border: none;}
+input.sheet-zero[type="radio"]:hover + span::before {opacity: 1;color: black; border: none;}
+
+
+/*----- Skills -----*/
+.sheet-fullblock {display:flex;flex: 0 0 230px; border: 1px solid black; padding: 2px 5px;flex-wrap:wrap;}
+
+.sheet-skills-item {
+    display: flex;
+    align-items:center; 
+    flex: 0 0 130px;
+    height: 20px;
+}
+
+.sheet-skills-item::after {
+ 	content:'';
+	flex:1;
+	margin: 0px -10px -8px 3px;
+	height:0;
+	border-bottom:solid black 1px;
+}
+
+.sheet-skills-title { width: 100%; text-transform: uppercase; text-align: center; padding: 5px 0;}
+.sheet-skills-title span {text-transform: lowercase; display: block; font-style: italic;}
+
+/*----- Skills -----*/
+
+.sheet-disciplines-block {display:flex;flex: 0 0 230px; padding: 0px 5px 2px;flex-wrap:wrap;align-content:flex-start}
+.sheet-disciplines-title, .sheet-merits-title, .sheet-aspirations-title { width: 100%; text-transform: uppercase; text-align: center; padding: 0px 0;}
+select {-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none;
+	outline: 0; box-shadow: none; border: 0 !important; background: transparent; background-image: none;}
+select::-ms-expand {display: none;}
+
+.sheet-disciplines-block > .sheet-radio-list, .sheet-merits-block > .sheet-radio-list  {padding-top: 5px;}
+.sheet-merits-item, .sheet-disciplines-item {position: relative; display: flex; flex: 0 0 130px; background: transparent; overflow: hidden; border-bottom:1px solid black;}
+
+select { flex: 1; padding: 0 .5em; color: #000; cursor: pointer; margin-bottom:-10px; width:100%;}
+
+.sheet-disciplines-item:disabled {color:#888;}
+.sheet-merits-item::after, .sheet-disciplines-item::after {content: '▽';
+  position: absolute; top: 8px; right: 0; padding: 0; background: transparent; opacity: 0.5;
+  cursor: pointer; pointer-events: none;font-size: 12px;
+  -webkit-transition: .25s all ease; -o-transition: .25s all ease; transition: .25s all ease;}
+
+/* Transition */
+.sheet-disciplines-item:hover::after { color: #f39c12;}
+
+.sheet-merits-block {display:flex;flex: 0 0 230px; padding: 0px 5px 0px;flex-wrap:wrap;align-content:flex-start}
+.sheet-merits-item select option:disabled {text-transform: uppercase; font-weight: bolder;}
+
+.sheet-aspirations-block {display:flex;flex: 0 0 230px; padding: 0px 5px 0px;flex-wrap:wrap;align-content:flex-start}
+
+
+
+
+
+
+
 
 
 /*-----background-----*/
-
 body {
     background-image: url("./images/background.jpg");
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 1200px;
+    background-size: 1016px;
     min-height: 1400px;
 }
 
@@ -325,59 +345,6 @@ input.sheet-arrow:checked ~ div.sheet-body {
     display: block;
 }
 
-/*-----radio boxes-----*/
-
-/* -----Hide actual radio----- */
-input.sheet-normal[type="radio"]
-{
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -10px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-/* -----Fake radio----- */
-input.sheet-normal[type="radio"] + span::before
-{
-    margin-right: 2px;
-    border: solid 1px #a8a8a8;
-    line-height: 14px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
-    
-    -moz-box-shadow: 0 0 2px #ccc;
-    -webkit-box-shadow: 0 0 2px #ccc;
-    box-shadow: 0 0 2px #ccc;
-    
-    background: #f6f6f6;
-    background: -moz-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -webkit-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -ms-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -o-radial-gradient(#f6f6f6, #dfdfdf);
-    background: radial-gradient(#f6f6f6, #dfdfdf);
-    
-    color:black;
-    content: "•";
-    width: 12px;
-    height: 12px;
-    font-size: 3em;
-    
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-
-/* -----Remove dot from all radios _after_ selected one----- */
-input.sheet-normal[type="radio"]:checked ~ input.sheet-normal[type="radio"] + span::before
-{    
-    content: "";
-}
 
 
 
