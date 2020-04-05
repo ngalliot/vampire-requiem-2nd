@@ -1,72 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap');
+.sheet-tabbed-panel {
+    padding-left:40px;
+}
 /*-----grid-----*/
 .sheet-wrapper {
+    font-family: "Myriad Pro, serif";
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr);
     grid-gap: 1px;
     background-color: transparent;
-    margin: 170px 90px 100px 90px;
+    margin: 120px 95px 80px 55px;
+    position: absolute;
+    width: 720px;
 }
 
-.sheet-container {width: 1015px; margin: 0 auto;}
+.sheet-recto, .sheet-verso {display: none;}
+.sheet-verso {display: grid; padding-top:20px;}
+/* show the selected tab */
+.sheet-tabstoggle[value="recto"] ~ div.sheet-recto, .sheet-tabstoggle[value="verso"] ~ div.sheet-verso {display: block;}
+.sheet-container {width: 870px; margin: 0 auto;    position: relative;}
+.charsheet {
+  background-image: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images/background.jpg");
+  background-color: black;
+  background-repeat: no-repeat;
+  color: black;
+  background-size:850px;
+  min-height:1150px;
+  padding:0;
+}
+
+.ui-dialog .charsheet {padding: 0;}
+
+
+.sheet-tabs-menu {position: absolute; top:60px;margin:0 80px;width:100%;}
+
 .sheet-justifycenter {justify-content: center;}
 
-.sheet-left  {grid-column: col-start 1 / span 4; display: flex; flex-wrap: wrap;}
-.sheet-main  {grid-column: col-start 5 / span 4; display: flex; flex-wrap: wrap;}
-.sheet-right {grid-column: col-start 9 / span 4; display: flex; flex-wrap: wrap;}
+.sheet-left  {grid-column: col-start 1 / span 4; display: flex; flex-wrap: wrap; align-content:flex-start;}
+.sheet-main  {grid-column: col-start 5 / span 4; display: flex; flex-wrap: wrap; align-content:flex-start;}
+.sheet-right {grid-column: col-start 9 / span 4; display: flex; flex-wrap: wrap; align-content:flex-start;}
 
 .sheet-attr-offset  {grid-column: col-start 1 / span 2; display: flex; flex-wrap: wrap; padding: 5px 10px;}
-.sheet-attr-left    {grid-column: col-start 3 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 10px;margin-right:10px}
-.sheet-attr-main    {grid-column: col-start 6 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 10px;margin-right:10px}
-.sheet-attr-right   {grid-column: col-start 9 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 10px;margin-right:10px}
+.sheet-attr-left    {grid-column: col-start 3 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 5px;margin-right:6px}
+.sheet-attr-main    {grid-column: col-start 6 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 5px;margin-right:6px}
+.sheet-attr-right   {grid-column: col-start 9 / span 3; display: flex; flex-wrap: wrap; border: 1px solid black; padding: 5px 0px 5px 5px;margin-right:6px}
 .sheet-attr-end		{grid-column: col-start 12/ span 1; display: flex; flex-wrap: wrap; padding: 5px 10px;}
 
 
-.sheet-fullbreak    {grid-column: col-start 1 / span 12; display: flex; background: url("./images/break.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 20px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;}
-.sheet-onethird-break    {grid-column: col-start 1 / span 4; display: flex; background: url("./images/breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;}
-.sheet-twothird-break    {grid-column: col-start 5 / span 8; display: flex; background: url("./images/breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;}
+.sheet-fullbreak    {grid-column: col-start 1 / span 12; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//break.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 5px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-onethird-break    {grid-column: col-start 1 / span 4; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-bgonethird { display:flex; width:100%; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-twothird-break    {grid-column: col-start 5 / span 8; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-bgtwothird { width:100%; display:flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+
+.sheet-onethird    {grid-column: col-start 1 / span 4; display: flex; flex-wrap: wrap; align-content:flex-start; justify-content: center; }
+.sheet-twothird    {grid-column: col-start 5 / span 8; display: flex; flex-wrap: wrap; align-content:flex-start; justify-content: center;}
 
 .sheet-break {flex-basis: 100%;height: 0;}
-.sheet-height20 {height:23px;}
-.sheet-height10 {height:15px;}
+.sheet-height20 {height:20px;}
+.sheet-height10 {height:10px;}
+.sheet-height5 {height:5px;}
+.sheet-height15 {height:16px;}
 .sheet-height30 {height:30px;}
 
 /*-----Generic fields-----*/
 .sheet-label {
-    flex: 0 0 80px;
-    align-items: bottom; text-align: right; padding-bottom: 10px;}
+    font-family: 'Libre Caslon Text', serif;
+    font-size:12px;
+    font-weight: bold;
+    flex: 0 0 85px;
+    align-items: bottom; text-align: right; }
 
-.sheet-radio-list {
-    display: flex;
-    flex: 1;
-    margin: 0; padding: 0; align-items:center;}
+.sheet-radio-list, .sheet-inverted-radio-list  {
+    display: flex; flex: 1;
+    margin: 0; padding: 0; justify-content:center; align-items:center;}
 
 input[type="text"] {
-    background: transparent; border: none; border-bottom: 1px dashed #83A4C5; outline: none; padding-left: 5px;}
+    background: transparent; border: none; border-bottom: 1px dashed #83A4C5; outline: none; padding: 0 0 0 5px; font-family: "Myriad Pro, serif";}
 
 /* ----- Header ----- */
+.sheet-header .sheet-radio-list {justify-content: flex-end;margin-right:4px;}
 .sheet-header-value {
-    flex: 0 0 100px;    
-    padding-bottom: 10px;}
-
+    font-family: 'Libre Caslon Text', serif;
+    flex: 0 0 50px;    
+    padding-bottom: 0px;}
+.sheet-header-value input[type="text"] {width:150px;}
 /* ----- Attributes ----- */
 .sheet-attr-helper {
-    flex: 0 0 80px;
+    flex: 0 0 75px;
     font-style: italic;
     color: #666;
     align-items: center;
     justify-content: flex-end;
     display: flex;
+    font-family: 'Libre Caslon Text', serif;
+    font-size:12px;
 }
+
 .sheet-attr-item {
+    font-family: 'Libre Caslon Text', serif;
+    font-size:12px;
     display: flex;
     align-items:center; 
-    flex: 0 0 90px;
-    height: 30px;
+    flex: 0 0 70px;
+    height: 20px;
 }
 
 
 /* -----Hide actual radio----- */
-input[type="radio"] {width: 16px; height: 16px; z-index: 1; position: relative; top: 5px;left: 6px; margin: -7px; opacity: 0;cursor: hand;}
+input[type="radio"] {width: 14px; height: 14px; z-index: 1; position: relative; top: 0px;left: 6px; margin: -7px -6px -7px -7px; opacity: 0;cursor: hand;}
 
 /* -----Fake radio----- */
 .sheet-radio-list input[type="radio"] + span::before {
@@ -121,13 +163,17 @@ input.sheet-zero[type="radio"]:hover + span::before {opacity: 1;color: black; bo
 
 
 /*----- Skills -----*/
-.sheet-fullblock {display:flex;flex: 0 0 230px; border: 1px solid black; padding: 2px 5px;flex-wrap:wrap;}
+.sheet-fullblock {display:flex;flex: 0 0 210px; border: 1px solid black; padding: 2px 5px;flex-wrap:wrap;}
+.sheet-normalblock {display:flex;flex: 0 0 210px; padding: 2px 5px;flex-wrap:wrap;}
 
 .sheet-skills-item {
     display: flex;
     align-items:center; 
-    flex: 0 0 130px;
-    height: 20px;
+    flex: 0 0 120px;
+    height: 18px;
+    font-family: 'Libre Caslon Text', serif;
+    font-size:12px;
+
 }
 
 .sheet-skills-item::after {
@@ -138,25 +184,28 @@ input.sheet-zero[type="radio"]:hover + span::before {opacity: 1;color: black; bo
 	border-bottom:solid black 1px;
 }
 
-.sheet-skills-title { width: 100%; text-transform: uppercase; text-align: center; padding: 5px 0;}
-.sheet-skills-title span {text-transform: lowercase; display: block; font-style: italic;}
+.sheet-skills-title { width: 100%; text-transform: uppercase; text-align: center; padding: 2px 0; font-family: 'Libre Caslon Text', serif; font-size:14px;}
+.sheet-skills-title span {text-transform: lowercase; display: block; font-style: italic; font-size:12px;}
 
 /*----- Skills -----*/
 
 .sheet-disciplines-block {display:flex;flex: 0 0 230px; padding: 0px 5px 2px;flex-wrap:wrap;align-content:flex-start}
-.sheet-disciplines-title, .sheet-merits-title, .sheet-aspirations-title { width: 100%; text-transform: uppercase; text-align: center; padding: 0px 0;}
+.sheet-disciplines-title, .sheet-merits-title, .sheet-aspirations-title, .sheet-health-title { width: 100%; text-transform: uppercase;font-size:14px; font-family: 'Libre Caslon Text', serif;text-align: center; padding: 0px 0;}
 select {-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; appearance: none;
 	outline: 0; box-shadow: none; border: 0 !important; background: transparent; background-image: none;}
 select::-ms-expand {display: none;}
 
-.sheet-disciplines-block > .sheet-radio-list, .sheet-merits-block > .sheet-radio-list  {padding-top: 5px;}
-.sheet-merits-item, .sheet-disciplines-item {position: relative; display: flex; flex: 0 0 130px; background: transparent; overflow: hidden; border-bottom:1px solid black;}
+.sheet-disciplines-block > .sheet-radio-list, .sheet-merits-block > .sheet-radio-list  {padding-top: 5px; }
+.sheet-merits-item, .sheet-disciplines-item {position: relative; display: flex; flex: 0 0 130px; background: transparent; overflow: hidden; border-bottom:1px solid black;margin-top:2px;}
+.sheet-otherdisc-item {position: relative; display: flex; flex: 0 0 120px; background: transparent; overflow: hidden;margin-top:2px;}
+.sheet-otherdisc {margin-top:4px;}
 
-select { flex: 1; padding: 0 .5em; color: #000; cursor: pointer; margin-bottom:-10px; width:100%;}
+select { flex: 1; padding: 0 .3em 0 2px; color: #000; cursor: pointer; margin-bottom:-3px; width:100%; font-family: 'Libre Caslon Text', serif; font-size:12px;}
+textarea {font-family: 'Myriad Pro', serif; height:auto;}
 
 .sheet-disciplines-item:disabled {color:#888;}
 .sheet-merits-item::after, .sheet-disciplines-item::after {content: '▽';
-  position: absolute; top: 8px; right: 0; padding: 0; background: transparent; opacity: 0.5;
+  position: absolute; top: 2px; right: 0; padding: 0; background: transparent; opacity: 0.5;
   cursor: pointer; pointer-events: none;font-size: 12px;
   -webkit-transition: .25s all ease; -o-transition: .25s all ease; transition: .25s all ease;}
 
@@ -170,657 +219,102 @@ select { flex: 1; padding: 0 .5em; color: #000; cursor: pointer; margin-bottom:-
 
 
 
+/*----- Santé ----- */
+.sheet-health-title {padding-bottom:0px;}
+.sheet-health-block {display:flex;flex: 0 0 230px; padding: 0px 5px 0px;flex-wrap:wrap;align-content:flex-start; justify-content: center;}
+div.sheet-healthbox {flex: 0 0 16px;height: 14px; position:relative; margin: 0px 4px 0px 1px;}
+input.sheet-healthbox {margin: 0 0 0 0;opacity: 0;width: 16px;height: 16px;position: absolute;z-index: 1;cursor: hand; top:0px;left:0px;}
+
+span.sheet-healthbox {margin:  0 0 0 0;display: none;}
+
+input.sheet-blackdot {z-index: 2}
+input.sheet-blackdot:checked + input.sheet-whitedot, input.sheet-whitedot:checked + input.sheet-bashingdot, input.sheet-bashingdot:checked + input.sheet-lethaldot, input.sheet-lethaldot:checked + input.sheet-aggravateddot {z-index: 3;}
+input.sheet-blackdot:checked ~ span.sheet-blackdot, input.sheet-whitedot:checked ~ span.sheet-whitedot, input.sheet-bashingdot:checked ~ span.sheet-bashingdot, input.sheet-lethaldot:checked ~ span.sheet-lethaldot, input.sheet-aggravateddot:checked ~ span.sheet-aggravateddot {display: inline-block;}
+
+.sheet-blackdot {width: 14px; height: 14px; background: black; border-radius:5px; border: 1px solid black; background-size: 100%;}
+.sheet-whitedot {width: 14px; height: 14px; background: white; border-radius:5px; border: 1px solid black; background-size: 100%;}
+
+.sheet-bashingdot {width: 14px; height: 14px; background: white; border-radius:5px; border: 1px solid black; background-size: 100%;}
+.sheet-bashingdot:before {content: "/"; text-align:center; padding-left:5px; line-height:1em; color:black; text-shadow:none; font-weight:300; font-size:1em;font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"}
 
 
+.sheet-lethaldot {width: 14px; height: 14px; background: white; border-radius:5px; border: 1px solid black; background-size: 100%; }
+.sheet-lethaldot:before {content: "x"; padding-left:2px; line-height:0.9em; color:black; text-shadow:none; font-weight:bold; margin-left:1px; font-size:1em;font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"} 
+
+.sheet-aggravateddot {width: 14px; height: 14px; background: white; border-radius:5px; border: 1px solid black; background-size: 100%; }
+.sheet-aggravateddot:before {font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; content: "*"; line-height:0.9em; padding-left:1px; color:black; font-size:2em;}
+
+.sheet-grid { margin-left:auto; margin-right:auto;}
 
 
+/*----- VOlonté -----*/
+.sheet-inverted-radio-list {margin-left:-4px;}
+.sheet-inverted-radio-list input[type="radio"] + span::before {
+    margin-right: 4px; margin-left: 4px;
+    border: solid 1px #000;
+    line-height: 11px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 1px #a8a8a8;
+    background: #f6f6f6; background: -moz-radial-gradient(#f6f6f6, #dfdfdf); background: -webkit-radial-gradient(#f6f6f6, #dfdfdf); background: -ms-radial-gradient(#f6f6f6, #dfdfdf); background: -o-radial-gradient(#f6f6f6, #dfdfdf); background: radial-gradient(#f6f6f6, #dfdfdf);
 
-
-/*-----background-----*/
-body {
-    background-image: url("./images/background.jpg");
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: 1016px;
-    min-height: 1400px;
-}
-
-/*-----text-----*/
-
-h5 {
-    text-shadow: 0px 0px 10px black;
     color:black;
-}
-
-th {
-    text-shadow: 0px 0px 10px black;
-    color:black;
-}
-
-h4 {
-    text-shadow: 0px 0px 10px white, 0px 0px 10px white, 0px 0px 10px white;
-    color:black;
-}
-
-h3 {
-    text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black ;
-    color:whitesmoke;
-}
-
-h2 {
-    background: black;
-    color:white;
-}
-
-{
-    text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black ;
-    color:whitesmoke;
-}
-
-.sheet-center {
-    text-align: center
-}
-
-.sheet-left {
-    text-align: left
-}
-
-.sheet-right {
-    text-align: right
-}
-/*-----textarea-----*/
-
-textarea {
-    height: 50px;
-}
-/*-----
-input[type="text"] {
-    background:none;
-    border:none:
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
------*/
-div.sheet-core-content { 
-    display: none; 
-    width:840px;
-}
-
-.charsheet div[class^="sheet-section"] {     
-    /*visibility: hidden;
-    opacity: 0;
-    max-height:0;
-  overflow: hidden;*/
-  display: none;
-}
-.charsheet {
-    background: url('https://40.media.tumblr.com/e0e7bb455a9d2f0673dded20f09ad249/tumblr_o4hpm8T07M1s9slulo1_540.jpg');
-    background-size:100%;
-}
-
-.charsheet input.sheet-tab1:checked ~ div.sheet-section-1,
-.charsheet input.sheet-tab2:checked ~ div.sheet-section-2,
-.charsheet input.sheet-tab3:checked ~ div.sheet-section-3,
-.charsheet input.sheet-tab4:checked ~ div.sheet-section-4,
-.charsheet input.sheet-tab5:checked ~ div.sheet-section-5,
-.charsheet input.sheet-tab6:checked ~ div.sheet-section-6,
-.charsheet input.sheet-tab7:checked ~ div.sheet-section-7,
-.charsheet input.sheet-tab8:checked ~ div.sheet-section-8,
-.charsheet input.sheet-tab9:checked ~ div.sheet-section-9 {
-  /*max-height: 999999px;
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.5s linear 0s;
-  overflow: auto;*/
-  display: block;
-}
-
-.charsheet input.sheet-tab99:checked ~ div[class^="sheet-section"] {  
-  /*max-height: 999999px;
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.5s linear 0s;*/
-  display: block;
-}
-
-.charsheet input.sheet-tab {
-    width: 100px;
-    height: 40px;
-    cursor: pointer;  
-  position: relative;
-  opacity: 0;
-  z-index: 9999;
-    margin-bottom:10px;
-}
-
-.charsheet span.sheet-tab {
-  text-align: center;
-    display: inline-block; 
-  font-size: 13px;  
-  background: white; 
-  color: black; 
-  font-weight: bold;
-  border-radius: 4px;
-  
-  width: 100px; /*originally 87px*/
-    height: 40px; /*originally 20px*/
-    cursor: pointer;  
-  position: relative;
-  vertical-align: middle;
-  margin-left: -101px;/*originally 91px*/
-    text-shadow: none;
-    border:2px solid black;
-}
-
-.charsheet input.sheet-tab1:checked + span.sheet-tab1,
-.charsheet input.sheet-tab2:checked + span.sheet-tab2,
-.charsheet input.sheet-tab3:checked + span.sheet-tab3,
-.charsheet input.sheet-tab4:checked + span.sheet-tab4,
-.charsheet input.sheet-tab5:checked + span.sheet-tab5,
-.charsheet input.sheet-tab6:checked + span.sheet-tab6,
-.charsheet input.sheet-tab7:checked + span.sheet-tab7,
-.charsheet input.sheet-tab8:checked + span.sheet-tab8,
-.charsheet input.sheet-tab9:checked + span.sheet-tab9,
-.charsheet input.sheet-tab10:checked + span.sheet-tab10,
-.charsheet input.sheet-tab99:checked + span.sheet-tab99 {
-    
-    background: black;  /*originally ab8b57*/  
-    color: white; /*originally white*/
-  border-radius: 4px;
-    border:2px solid red;
-}
-
-/*----------- End Tab Setup -----------*/
-
-input.sheet-arrow {
-    float: left;
-}
-
-div.sheet-body {
-    display: none;
-}
-
-input.sheet-arrow:checked ~ div.sheet-body {
-    display: block;
-}
+    content: "";
+    width: 10px; height: 10px;
+    font-size: 1em;
+    -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;}
 
 
+/* -----Remove dot from all radios _after_ selected one----- */
+.sheet-inverted-radio-list input[type="radio"]:checked ~ input[type="radio"] + span::before {color:black; content: "•"; background: black; border: solid 1px black;}
+.sheet-inverted-radio-list input[type="radio"]:hover + span::before {opacity: 1;}
+
+.sheet-radio-wide input[type="radio"] + span::before {margin-right: 6px;width: 12px; height: 12px;}
 
 
-/* -----Health boxes----- */
-div.sheet-healthbox {
-    width: 20px;
-    height: 20px;
-    position: relative;
-}
-
-input.sheet-healthbox {
-    margin: 0 0 0 0;
-    opacity: 0;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    z-index: 1;
-}
-
-span.sheet-healthbox {
-    margin:  0 0 0 0;
-    display: none;
-}
-
-input.sheet-blackdot { 
-    z-index: 2; 
-}
-
-input.sheet-blackdot:checked + input.sheet-whitedot,
-input.sheet-whitedot:checked + input.sheet-bashingdot,
-input.sheet-bashingdot:checked + input.sheet-lethaldot,
-input.sheet-lethaldot:checked + input.sheet-aggravateddot { 
-    z-index: 3; 
-}
-
-input.sheet-blackdot:checked ~ span.sheet-blackdot,
-input.sheet-whitedot:checked ~ span.sheet-whitedot,
-input.sheet-bashingdot:checked ~ span.sheet-bashingdot, 
-input.sheet-lethaldot:checked ~ span.sheet-lethaldot,
-input.sheet-aggravateddot:checked ~ span.sheet-aggravateddot { 
-    display: inline-block; 
-}
-
-.sheet-blackdot {
-    width: 20px;
-    height: 20px;
-    background: black;
-    border-radius:5px;
-    background-size: 100%;
-}
-
-.sheet-whitedot {
-    width: 14px;
-    height: 14px;
-    background: white;
-    border-radius:50%;
-    border: 3px solid black;
-    background-size: 100%;
-}
-
-.sheet-bashingdot {
-    width: 14px;
-    height: 14px;
-    background: white;
-    border-radius:50%;
-    border: 3px solid black;
-    background-size: 100%;
-}
-
-.sheet-bashingdot:before {   
-    content: "/";
-    text-align:center;
-    padding-left:3px;
-    padding-bottom:3px;
-    color:black;
-    text-shadow:none;
-    font-weight:bold;
-    margin-left:1px;
-    font-size:1.6em;
-}
-.sheet-lethaldot {
-    width: 14px;
-    height: 14px;
-    background: white;
-    border-radius:50%;
-    border: 3px solid black;
-    background-size: 100%;
-}
-
-.sheet-lethaldot:before {   
-    content: "X";
-    padding-left:0px;
-    margin-bottom:5px;
-    color:black;
-    text-shadow:none;
-    font-weight:bold;
-    margin-left:1px;
-    font-size:1.4em;
-}
-
-.sheet-aggravateddot {
-    width: 20px;
-    height: 20px;
-}
-.sheet-aggravateddot:before {   
-    font-family: "Pictos";
-    content: "D";
-    padding-left:0px;
-    margin-bottom:5px;
-    color:black;
-    text-shadow:none;
-    font-weight:bold;
-    margin-left:1px;
-    font-size:1.6em;
-}
-
-.sheet-grid {
-   margin-left:auto;
-   margin-right:auto;
-}
+/* ----- VITAE ----- */
 
 /*-----vitae -----*/
 
-div.sheet-vitae {
-    width: 20px;
-    height: 20px;
-    position: relative;
-}
-
-input.sheet-vitae {
-    margin: 00px 0 0 00px;
-    opacity: 00;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    z-index: 1;
-}
-
-span.sheet-vitae {
-    margin: 00px 0 0 00px;
-    display: none;
-}
+div.sheet-vitae { flex: 0 0 16px; height: 14px; position: relative; margin: 0px 4px 0px 1px;}
+input.sheet-vitae {margin: 0px 0 0 0px; opacity: 0; width: 16px; height: 16px; position: absolute; z-index: 1; top:0; left:0;}
+span.sheet-vitae { margin: 0px 0px 0 0px; display: none; }
 
 input.sheet-blankvitae { z-index: 2; }
+input.sheet-blankvitae:checked + input.sheet-redvitae, input.sheet-redvitae:checked + input.sheet-emptyvitae { z-index: 3; }
+input.sheet-blankvitae:checked ~ span.sheet-blankvitae, input.sheet-redvitae:checked ~ span.sheet-redvitae, input.sheet-emptyvitae:checked ~ span.sheet-emptyvitae { display: inline-block; }
 
-input.sheet-blankvitae:checked + input.sheet-redvitae,
-input.sheet-redvitae:checked + input.sheet-emptyvitae { z-index: 3; }
-
-input.sheet-blankvitae:checked ~ span.sheet-blankvitae,
-input.sheet-redvitae:checked ~ span.sheet-redvitae,
-input.sheet-emptyvitae:checked ~ span.sheet-emptyvitae { display: inline-block; }
-
-.sheet-blankvitae {
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius:7px;
-    box-shadow: inset 0px 0px 3px red, 0px 0px 2px black;
-}
-
-.sheet-redvitae {
-    width: 20px;
-    height: 20px;
-    background: pink;
-    border-radius:7px;
-    box-shadow: inset 0px 0px 3px red,inset 0px 0px 5px red, inset 0px 0px 10px red, 0px 0px 2px black;
-}
-
-.sheet-emptyvitae {
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius:7px;
-    box-shadow: inset 0px 0px 2px black, inset 0px 0px 5px black, inset 0px 0px 7px black
-}
+.sheet-blankvitae   { width: 14px; height: 14px; background: white; border-radius:5px; border: 1px solid black;}
+.sheet-redvitae     { width: 14px; height: 14px; background: pink;  border-radius:5px; border: 1px solid black;}
+.sheet-emptyvitae   { width: 14px; height: 14px; background: black; border-radius:5px; border: 1px solid black;}
 
 
-/*--------------Big Checkbox--------------*/
-
-/* ----Hide actual sheet-arrow checkbox---- */
-input.sheet-bigcheck[type="checkbox"]
-{
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -10px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-/* ----Fake sheet-arrow checkbox---- */
-input.sheet-bigcheck[type="checkbox"] + span::before
-{
-    margin-right: 4px;
-    border: solid 1px #a8a8a8;
-    line-height: 14px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
-    
-    -moz-box-shadow: 0 0 2px #ccc;
-    -webkit-box-shadow: 0 0 2px #ccc;
-    box-shadow: 0 0 2px #ccc;
-    
-    background: #f6f6f6;
-    background: -moz-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -webkit-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -ms-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -o-radial-gradient(#f6f6f6, #dfdfdf);
-    background: radial-gradient(#f6f6f6, #dfdfdf);
-}
-
-input.sheet-bigcheck[type="checkbox"] + span::before
-{
-    content: "";
-    width: 14px;
-    height: 14px;
-    font-size: 12px;
-    
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-}
-input.sheet-bigcheck[type="checkbox"]:checked + span::before
-{
-    color: red;
-    content: "✓";
-}
-
-/*--------------Round checkbox--------------*/
-
+/*-----Big Check-----*/
+.sheet-human-value {flex: 0 0 100px; padding-bottom: 0px;}
+.sheet-human-value input[type="text"] {width:150px;}
+.sheet-human-count {flex: 0 0 20px;text-align: right; margin-top:2px;}
+div.sheet-humanitybox {flex: 0 0 16px;height: 14px; position:relative; margin: 0px 4px 0px 1px;}
 /* ----Hide actual roundcheck checkbox---- */
-input.sheet-roundcheck[type="checkbox"]
-{
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -10px;
-    cursor: pointer;
-    z-index: 1;
-}
+input.sheet-roundcheck[type="checkbox"] {opacity: 0; width: 14px; height: 14px; position: relative; top: 5px; left: 12px; margin: -10px; cursor: pointer; z-index: 1;}
 
-/* ----Fake roundcheck checkbox---- */
-input.sheet-roundcheck[type="checkbox"] + span::before
-{
-    margin-right: 4px;
-    border: solid 1px #a8a8a8;
-    line-height: 14px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
+input.sheet-roundcheck[type="checkbox"] + span::before {
+    margin:2px 0px 0px 8px; border: solid 1px #a8a8a8; line-height: 14px; text-align: center; display: inline-block; vertical-align: middle;
     border-radius: 20px 20px 20px 20px;
-
-    -moz-box-shadow: 0 0 20px #ccc;
-    -webkit-box-shadow: 0 0 20px #ccc;
-    box-shadow: 0 0 20px #ccc;
-    
-    background: #f6f6f6;
-    background: -moz-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -webkit-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -ms-radial-gradient(#f6f6f6, #dfdfdf);
-    background: -o-radial-gradient(#f6f6f6, #dfdfdf);
-    background: radial-gradient(#f6f6f6, #dfdfdf);
-    
-    -moz-border-radius:  20px 20px 20px 20px;
-    -webkit-border-radius:  20px 20px 20px 20px;
-    border-radius: 20px 20px 20px 20px;
+    background: #f6f6f6; background: -moz-radial-gradient(#f6f6f6, #dfdfdf); background: -webkit-radial-gradient(#f6f6f6, #dfdfdf); background: -ms-radial-gradient(#f6f6f6, #dfdfdf); background: -o-radial-gradient(#f6f6f6, #dfdfdf); background: radial-gradient(#f6f6f6, #dfdfdf);
+    -moz-border-radius:  20px 20px 20px 20px; -webkit-border-radius:  20px 20px 20px 20px; border-radius: 20px 20px 20px 20px;
 }
 
-input.sheet-roundcheck[type="checkbox"] + span::before
-{
-    content: "";
-    width: 14px;
-    height: 14px;
-    font-size: 12px;
-    
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
-}
-input.sheet-roundcheck[type="checkbox"]:checked + span::before
-{
-    color: black;
-    font-size: 3em;
-    content: "•";
-}
-/*-------Tables--------*/
-table.sheet-devotions {
-    border: 1px solid black;
-    background: #1C1C1C;
-}
+input.sheet-roundcheck[type="checkbox"] + span::before {content: ""; width: 14px; height: 14px; font-size: 12px; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px;}
+input.sheet-roundcheck[type="checkbox"]:checked + span::before { background: black; border: 1px solid black; color:black; font-size: 3em; content: "•";}
 
-table.sheet-weapon, th.sheet-weapon, td.sheet-weapon {
-    border: 1px solid black;
-    background:white;
-}
+/*----Details----*/
+.sheet-details-block {display:flex;flex: 0 0 210px; padding: 0px 5px 2px;flex-wrap:wrap;align-content:flex-start; font-family: 'Libre Caslon Text', serif; font-size:12px;}
+.sheet-details {flex: 0 0 50px; flex:1; align-items: bottom; padding-bottom: 10px;}
+.sheet-details-value {flex: 0 0 30px; flex:1; padding-bottom: 10px;}
+.sheet-details input {width:30px;}
 
-th.sheet-armor, td.sheet-armor {
-    border: 0px solid black;
-    background:none;
-}
-
-/*-----sheet-arrow-----*/
-input.sheet-arrow {
-    float: left;
-}
-
-div.sheet-body {
-    display: none;
-}
-
-input.sheet-arrow:checked ~ div.sheet-body {
-    display: block;
-}
-
-/* ----Hide actual sheet-arrow checkbox---- */
-
-input.sheet-arrow[type="checkbox"]
-{
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    top: 15px;
-    left: 15px;
-    margin: -10px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-/* -----Fake sheet-arrow checkbox----- */
-
-input.sheet-arrow[type="checkbox"] + span::before
-{
-    position: relative;
-    top: 15px;
-    left: 5px;
-    color:white;
-    line-height: 14px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
-    float: left; 
-    width: 14px;
-    height: 14px;
-    content: "*";
-    font-size:3em;
-}
-input.sheet-arrow[type="checkbox"]:checked + span::before
-{
-    color:red;
-    font-size:3em;
-}
-
- /*-------sheet select---------*/
-
-.sheet-select {
-    margin-bottom: 0
-}
- /*-------Roll templates---------*/
-
-.sheet-rolltemplate-wod table {
-    width: 189px;
-    height: 189px;
-    padding: 2px;
-    background: url(http://i.imgur.com/xBk4U1p.jpg) top left;
-    background-size: 189px 189px;
-    background-repeat: no-repeat;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-    border-spacing: 0;
-}
- 
-.sheet-rolltemplate-wod th {
-    color: rgb(112, 0, 0);
-    padding: 15px 2px 2px 20px;
-  line-height: 1.2em;
-  font-size: 1.2em;
-    text-align: left;
-}
- 
- 
-.sheet-rolltemplate-wod td {
-    padding-left: 20px;
-    font-size: 1.0em;
-    vertical-align: top;
-}
- 
-.sheet-rolltemplate-wod .sheet-result {
-    font-size: 1.2em;
-    text-align: center;
-    color: rgb(112, 0, 0);
-    padding-bottom: 20px;
-}
- 
-.sheet-rolltemplate-wod .inlinerollresult  {
-    background-color: transparent;
-    color: #000000;
-    border: none;
-}
- 
-.sheet-rolltemplate-wod .inlinerollresult.fullcrit {
-  color: #3FB315;
-    border: none;
-}
- 
-.sheet-rolltemplate-wod .inlinerollresult.fullfail {
-    color: #000000;
-    border: none;
-}
- 
-.sheet-rolltemplate-wod .inlinerollresult.importantroll {
-  color: #3FB315;
-    border: none;
-}
-
-
- /*-------Roll templates---------*/
-
-.sheet-rolltemplate-wod_attack table {
-    width: 189px;
-    height: 189px;
-    padding: 2px;
-    background: url(http://i.imgur.com/xBk4U1p.jpg) top left;
-    background-size: 189px 189px;
-    background-repeat: no-repeat;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-    border-spacing: 0;
-}
- 
-.sheet-rolltemplate-wod_attack th {
-    color: rgb(112, 0, 0);
-    padding: 5px 2px 2px 20px;
-    line-height: 1.2em;
-  font-size: 1.2em;
-    text-align: left;
-}
- 
- 
-.sheet-rolltemplate-wod_attack td {
-    padding-left: 20px;
-    font-size: 1.0em;
-    vertical-align: top;
-}
- 
-.sheet-rolltemplate-wod_attack .sheet-result {
-    font-size: 1.1em;
-    text-align: center;
-    color: rgb(112, 0, 0);
-    padding-bottom: 5px;
-}
- 
-.sheet-rolltemplate-wod_attack .inlinerollresult  {
-    background-color: transparent;
-    color: #000000;
-    border: none;
-}
- 
-.sheet-rolltemplate-wod_attack .inlinerollresult.fullcrit {
-  color: #3FB315;
-    border: none;
-}
- 
-.sheet-rolltemplate-wod_attack .inlinerollresult.fullfail {
-    color: #000000;
-    border: none;
-}
- 
-.sheet-rolltemplate-wod_attack .inlinerollresult.importantroll {
-  color: #3FB315;
-    border: none;
+input.sheet-beats[type="checkbox"] + span::before {margin-top:-2px;margin-right:-2px;}
+/*-----background-----*/
+body {
 }
