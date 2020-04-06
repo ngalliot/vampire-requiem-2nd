@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap');
 .sheet-tabbed-panel {
-    padding-left:40px;
+    padding-left:10px;
 }
 /*-----grid-----*/
 .sheet-wrapper {
@@ -49,7 +49,7 @@
 
 .sheet-fullbreak    {grid-column: col-start 1 / span 12; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//break.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 5px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
 .sheet-onethird-break    {grid-column: col-start 1 / span 4; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
-.sheet-bgonethird { display:flex; width:100%; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-bgonethird { display:flex; width:100%; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
 .sheet-twothird-break    {grid-column: col-start 5 / span 8; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
 .sheet-bgtwothird { width:100%; display:flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
 
@@ -314,7 +314,50 @@ input.sheet-roundcheck[type="checkbox"]:checked + span::before { background: bla
 .sheet-details-value {flex: 0 0 30px; flex:1; padding-bottom: 10px;}
 .sheet-details input {width:30px;}
 
+/*-----Page 2-----*/
+
+.sheet-lang-item input {width:200px;}
+
 input.sheet-beats[type="checkbox"] + span::before {margin-top:-2px;margin-right:-2px;}
+/* ----Hide actual roundcheck checkbox---- */
+input.sheet-statecheck[type="checkbox"] {opacity: 0; width: 14px; height: 14px; position: relative; top: 5px; left: 12px; margin: -10px; cursor: pointer; z-index: 1;}
+
+input.sheet-statecheck[type="checkbox"] + span::before {
+    margin:2px 0px 0px 8px; border: solid 1px #a8a8a8; line-height: 14px; text-align: center; display: inline-block; vertical-align: middle;
+    border-radius: 5px;
+    background: #f6f6f6; background: -moz-radial-gradient(#f6f6f6, #dfdfdf); background: -webkit-radial-gradient(#f6f6f6, #dfdfdf); background: -ms-radial-gradient(#f6f6f6, #dfdfdf); background: -o-radial-gradient(#f6f6f6, #dfdfdf); background: radial-gradient(#f6f6f6, #dfdfdf);
+    -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+}
+
+input.sheet-statecheck[type="checkbox"] + span::before {content: ""; width: 12px; height: 12px; font-size: 12px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
+input.sheet-statecheck[type="checkbox"]:checked + span::before { background: black; border: 1px solid black; color:black; font-size: 3em; content: "•";}
+
+.sheet-etats-block {display: flex; flex:0 0 470px; flex-wrap: wrap;}
+.sheet-etats-block label {flex: 0 0 55px; overflow: hidden;height: 1em;font-family:'Libre Caslon Text', serif; font-size:11px; }
+/*this hides the contents of each section by default*/
+.charsheet div[class^="sheet-dispetat"] {display: none;flex: 0 0 230px;}
+
+
+/*this shows the race traits content when the appropriate input field is selected*/
+input.sheet-etat1:checked ~ div.sheet-dispetat1, input.sheet-etat2:checked ~ div.sheet-dispetat2, input.sheet-etat3:checked ~ div.sheet-dispetat3, input.sheet-etat4:checked ~ div.sheet-dispetat4, input.sheet-etat5:checked ~ div.sheet-dispetat5, input.sheet-etat6:checked ~ div.sheet-dispetat6, input.sheet-etat7:checked ~ div.sheet-dispetat7, input.sheet-etat8:checked ~ div.sheet-dispetat8, input.sheet-etat9:checked ~ div.sheet-dispetat9, input.sheet-etat10:checked ~ div.sheet-dispetat10,
+input.sheet-etat11:checked ~ div.sheet-dispetat11, input.sheet-etat12:checked ~ div.sheet-dispetat12, input.sheet-etat13:checked ~ div.sheet-dispetat13, input.sheet-etat14:checked ~ div.sheet-dispetat14, input.sheet-etat15:checked ~ div.sheet-dispetat15, input.sheet-etat16:checked ~ div.sheet-dispetat16, input.sheet-etat17:checked ~ div.sheet-dispetat17, input.sheet-etat18:checked ~ div.sheet-dispetat18, input.sheet-etat19:checked ~ div.sheet-dispetat19, input.sheet-etat20:checked ~ div.sheet-dispetat20,
+input.sheet-etat21:checked ~ div.sheet-dispetat21, input.sheet-etat22:checked ~ div.sheet-dispetat22, input.sheet-etat23:checked ~ div.sheet-dispetat23, input.sheet-etat24:checked ~ div.sheet-dispetat24, input.sheet-etat25:checked ~ div.sheet-dispetat25, input.sheet-etat26:checked ~ div.sheet-dispetat26, input.sheet-etat27:checked ~ div.sheet-dispetat27, input.sheet-etat28:checked ~ div.sheet-dispetat28, input.sheet-etat29:checked ~ div.sheet-dispetat29, input.sheet-etat30:checked ~ div.sheet-dispetat30,
+input.sheet-etat31:checked ~ div.sheet-dispetat31, input.sheet-etat32:checked ~ div.sheet-dispetat32, input.sheet-etat33:checked ~ div.sheet-dispetat33, input.sheet-etat34:checked ~ div.sheet-dispetat34, input.sheet-etat35:checked ~ div.sheet-dispetat35, input.sheet-etat36:checked ~ div.sheet-dispetat36, input.sheet-etat37:checked ~ div.sheet-dispetat37, input.sheet-etat38:checked ~ div.sheet-dispetat38, input.sheet-etat39:checked ~ div.sheet-dispetat39, input.sheet-etat40:checked ~ div.sheet-dispetat40,
+input.sheet-etat41:checked ~ div.sheet-dispetat41, input.sheet-etat42:checked ~ div.sheet-dispetat42, input.sheet-etat43:checked ~ div.sheet-dispetat43 {display: flex; padding: 0 10px 0 8px;}
+
+
+.sheet-etat-display {flex:0 0 235px; height:230px; overflow: hidden;}
+.sheet-etat-display-title { display:flex; width: 100%; text-transform: uppercase; color:white; justify-content: center; align-items: center; font-family: 'Libre Caslon Text', serif; font-size:14px; 
+background: url("./images/etathead.png") no-repeat center; background-size: 100%; height: 35px; }
+/*background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images/break.png") no-repeat center; background-size: 100%; height: 35px; }*/
+select.sheet-etat-select {color:#fff;font-family: 'Libre Caslon Text', serif; font-size:14px; margin-left:30px;margin-top:-5px; text-transform: uppercase;}
+select.sheet-etat-select::-ms-expand {display: none;}
+select.sheet-etat-select:focus {color: #fff;outline: none;}
+select.sheet-etat-select option {font-weight:normal;color:#000; text-transform: capitalize;}
+.sheet-etat-display-desc {font-family: "Myriad Pro, serif"; font-size: 14px; height: 280px;overflow: hidden;line-height: 14px; flex: 0 0 100%;}
+.sheet-etat-display-desc p {margin:2px 0px;}
+input.sheet-etatfake {width: 0px; height: 0px; opacity: 0; display: none;}
+
 /*-----background-----*/
 body {
 }
