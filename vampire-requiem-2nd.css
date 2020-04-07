@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap');
 
+p, span, div, input {font-family: "Myriad pro", serif;}
 /*-----grid-----*/
 .sheet-wrapper {
-    font-family: "Garamond, serif";
+    font-family: 'Myriad Pro', serif;
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr);
     grid-gap: 1px;
@@ -13,7 +14,7 @@
 }
 
 .sheet-recto, .sheet-verso, .sheet-aides {display: none;}
-/*.sheet-verso {display: grid; padding-top:20px;}*/
+.sheet-aides {display: grid; padding-top:20px;}
 /* show the selected tab */
 .sheet-tabstoggle[value="recto"] ~ div.sheet-recto, .sheet-tabstoggle[value="verso"] ~ div.sheet-verso, .sheet-tabstoggle[value="aides"] ~ div.sheet-aides {display: block;}
 .sheet-container {width: 870px; margin: 0 auto;    position: relative;}
@@ -74,7 +75,7 @@
     margin: 0; padding: 0; justify-content:center; align-items:center;}
 
 input[type="text"] {
-    background: transparent; border: none; border-bottom: 1px dashed #83A4C5; outline: none; padding: 0 0 0 5px; font-family: "Garamond, serif";}
+    background: transparent; border: none; border-bottom: 1px dashed #83A4C5; outline: none; padding: 0 0 0 5px; font-family: 'Myriad Pro', serif;}
 
 /* ----- Header ----- */
 .sheet-header .sheet-radio-list {justify-content: flex-end;margin-right:4px;}
@@ -198,8 +199,8 @@ select::-ms-expand {display: none;}
 .sheet-otherdisc-item {position: relative; display: flex; flex: 0 0 120px; background: transparent; overflow: hidden;margin-top:2px;}
 .sheet-otherdisc {margin-top:4px;}
 
-select { flex: 1; padding: 0 .3em 0 2px; color: #000; cursor: pointer; margin-bottom:-3px; width:100%; font-family: 'Libre Caslon Text', serif; font-size:12px;}
-textarea {font-family: 'Garamond', serif; height:auto;}
+select { flex: 1; padding: 0 .3em 0 2px; color: #000; cursor: pointer; margin-bottom:-3px; width:100%; font-family: 'Libre Caslon Text', serif; font-size:12px; height:20px;}
+textarea {font-family: 'Myriad Pro', serif; height:auto;}
 
 .sheet-disciplines-item:disabled {color:#888;}
 .sheet-merits-item::after, .sheet-disciplines-item::after {content: '▽';
@@ -311,7 +312,7 @@ input.sheet-roundcheck[type="checkbox"]:checked + span::before { background: bla
 .sheet-details {flex: 0 0 50px; flex:1; align-items: bottom; padding-bottom: 10px;}
 .sheet-details-value {flex: 0 0 30px; flex:1; padding-bottom: 10px;}
 .sheet-details input {width:30px;}
-
+.sheet-details input[type="checkbox"] {top:-1px;left:13px;}
 /*-----Page 2-----*/
 
 .sheet-lang-item input {width:200px;}
@@ -355,8 +356,8 @@ select.sheet-etat-select {color:#fff;font-family: 'Libre Caslon Text', serif; fo
 select.sheet-etat-select::-ms-expand {display: none;}
 select.sheet-etat-select:focus {color: #fff;outline: none;}
 select.sheet-etat-select option {font-weight:normal;color:#000; text-transform: capitalize;}
-.sheet-etat-display-desc {font-family: "Garamond, serif"; font-size: 13px; height: 280px;overflow: hidden;line-height: 14px; flex: 0 0 100%;}
-.sheet-etat-display-desc p {margin:2px 0px;}
+.sheet-etat-display-desc {font-family: 'Myriad Pro', serif; font-size: 13px; height: 280px;overflow: hidden;line-height: 14px; flex: 0 0 100%;}
+.sheet-etat-display-desc p {margin:2px 0px; line-height: 14px;}
 input.sheet-etatfake {width: 0px; height: 0px; opacity: 0; display: none;}
 
 
