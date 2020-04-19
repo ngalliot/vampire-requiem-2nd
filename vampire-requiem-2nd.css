@@ -47,13 +47,15 @@ p, span, div, input {font-family: "Myriad pro", serif;}
 
 
 .sheet-fullbreak    {grid-column: col-start 1 / span 12; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//break.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 5px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
-.sheet-onethird-break    {grid-column: col-start 1 / span 4; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
-.sheet-bgonethird { display:flex; width:100%; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
-.sheet-twothird-break    {grid-column: col-start 5 / span 8; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
-.sheet-bgtwothird { width:100%; display:flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images//breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-onethird-break    {grid-column: col-start 1 / span 4; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images/breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-bgonethird { display:flex; width:100%; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images/breakonethird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-twothird-break    {grid-column: col-start 5 / span 8; display: flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images/breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
+.sheet-bgtwothird { width:100%; display:flex; background: url("https://raw.githubusercontent.com/ngalliot/vampire-requiem-2nd/master/images/breaktwothird.png") no-repeat center; background-size: 100%; height: 35px; margin: 10px 0px; align-items: center;  justify-content: center; color:white; text-transform: uppercase;font-family: 'Libre Caslon Text', serif; letter-spacing: 3px; font-weight: 300;}
 
 .sheet-onethird    {grid-column: col-start 1 / span 4; display: flex; flex-wrap: wrap; align-content:flex-start; justify-content: center; }
 .sheet-twothird    {grid-column: col-start 5 / span 8; display: flex; flex-wrap: wrap; align-content:flex-start; justify-content: center;}
+.sheet-onehalf    {grid-column: col-start 1 / span 6; display: flex; flex-wrap: wrap; align-content:flex-start; justify-content: center; }
+.sheet-twohalf    {grid-column: col-start 7 / span 6; display: flex; flex-wrap: wrap; align-content:flex-start; justify-content: center;}
 
 .sheet-break {flex-basis: 100%;height: 0;}
 .sheet-height20 {height:20px;}
@@ -379,6 +381,52 @@ input.sheet-etatfake {width: 0px; height: 0px; opacity: 0; display: none;}
 .sheet-fight-space5 input {width: 60px;}
 .sheet-fight-space6 input {width: 50px;}
 .sheet-fight-space7 input {width: 45px;}
+
+
+/*-----AIDES------*/
+
+.charsheet div[class^="sheet-hd"] {display: none;flex: 0 0 230px;}
+
+input.sheet-hd1:checked ~ div.sheet-hd1-display, input.sheet-hd2:checked ~ div.sheet-hd2-display, input.sheet-hd3:checked ~ div.sheet-hd3-display, input.sheet-hd4:checked ~ div.sheet-hd4-display, input.sheet-hd5:checked ~ div.sheet-hd5-display, input.sheet-hd6:checked ~ div.sheet-hd6-display, input.sheet-hd7:checked ~ div.sheet-hd7-display, input.sheet-hd8:checked ~ div.sheet-hd8-display, input.sheet-hd9:checked ~ div.sheet-hd9-display, input.sheet-hd10:checked ~ div.sheet-hd10-display {display: flex; padding: 0 10px 0 8px;}
+.sheet-helpdisciplines-display-name {font-weight: bold;font-size:12px;text-decoration: underline;}
+.sheet-helpdisciplines-display-desc .disc::before {
+	padding: 0 4px 0 0px;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.sheet-helpdisciplines-display-desc .disc1::before {content: "•";}
+.sheet-helpdisciplines-display-desc .disc2::before {content: "••";}
+.sheet-helpdisciplines-display-desc .disc3::before {content: "•••";}
+.sheet-helpdisciplines-display-desc .disc4::before {content: "••••";}
+.sheet-helpdisciplines-display-desc .disc5::before {content: "•••••";}
+
+.sheet-helpdisciplines-display-desc ul {
+	margin:0;
+	padding:0 0 0 15px;
+	list-style-type: '- ';
+}
+.sheet-helpdisciplines-display-title::after {color: #3a1b15; content: '▽';
+  position: absolute; top: 5px; right: 10px; padding: 0; background: transparent; opacity: 1;
+  cursor: pointer; pointer-events: none;font-size: 12px;
+  -webkit-transition: .25s all ease; -o-transition: .25s all ease; transition: .25s all ease;}
+
+.sheet-helpdisciplines-display {flex:0 0 320px; overflow: hidden; padding-left: 0px;}
+.sheet-helpdisciplines-display-title { display:flex; position:relative; width: 320px; color: #3a1b15; text-transform: uppercase; justify-content: center; align-items: center; font-family: 'Libre Caslon Text', serif; font-size:14px; border-bottom : 1px solid #3a1b15; height: 35px; }
+select.sheet-helpdisciplines-select {font-family: 'Libre Caslon Text', serif; font-size:14px; color:#3a1b15; margin-left:10px;margin-top:-5px; text-transform: uppercase;}
+select.sheet-helpdisciplines-select::-ms-expand {display: none;}
+select.sheet-helpdisciplines-select:focus {color: #3a1b15;outline: none;}
+select.sheet-helpdisciplines-select option {font-weight:normal;color:#3a1b15; text-transform: capitalize;}
+.sheet-helpdisciplines-display-desc {font-family: 'Myriad Pro', serif; font-size: 14px; overflow: hidden;line-height: 15px; flex: 0 0 100%;}
+.sheet-helpdisciplines-display-desc p {margin:2px 0px; line-height: 14px;padding-top: 4px;}
+input.sheet-helpdisciplines-fake {width: 0px; height: 0px; opacity: 0; display: none;}
+
+
+/*---- Actions standards ----*/
+.sheet-standardactions-display {display: flex; flex:0 0 320px; padding-left: 0px;}
+.sheet-standardactions-title {padding:2px;display:flex;justify-content: center; text-align: center; align-items: center; font-family: 'Libre Caslon Text', serif; font-size:12px; flex:0 0 100px; height:35px; color: #3a1b15; border: 1px solid #3a1b15;}
+.sheet-standardactions-throw {padding:2px;display:flex; justify-content: center; text-align: center; align-items: center; font-family: 'Myriad Pro', serif; font-size:14px; flex:0 0 220px;height:35px; color: black; border: 1px solid #3a1b15;}
+
 /*-----background-----*/
 body {
 }

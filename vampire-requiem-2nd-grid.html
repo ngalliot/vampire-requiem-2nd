@@ -8,7 +8,7 @@
 	    <button type="action" name="act_verso" >Verso</button>
 	    <button type="action" name="act_verso" >Aides</button>
 	</div>
-	<input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
+	<input type="hidden" class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
 <!-- End Tab setup -->
 	<div class="sheet-recto">
 	    <div class="sheet-tabbed-panel">
@@ -4809,20 +4809,392 @@
 		<div class="sheet-aides">
 	    	<div class="sheet-tabbed-panel">
 	    		<div class="sheet-wrapper">
-	    	
-		    	</div>
+					<div class="sheet-onehalf">
+					<div class="sheet-header sheet-bgonethird">Disciplines</div>
+					<div class="sheet-break"></div>
+					<div class="sheet-helpdisciplines-display">
+                        	<div class="sheet-helpdisciplines-display-title">
+                        		<select name="helpdisciplines" class="sheet-helpdisciplines-select" onchange="mychange(this, 'hd')">
+									<option value="0" selected></option>
+									<option value="1">Animalisme</option>
+									<option value="2">Auspex</option>
+									<option value="3">Cauchemar</option>
+									<option value="4">Célérité</option>
+									<option value="5">Domination</option>
+									<option value="6">Majesté</option>
+									<option value="7">Occultation</option>
+									<option value="8">Protéisme</option>
+									<option value="9">Puissance</option>
+									<option value="10">Résilience</option>
+		        				</select>
+                        	</div>
+							<input type="checkbox" name="helpdisciplines" value="1" class="sheet-helpdisciplines-fake sheet-hd1"/><input type="checkbox" name="helpdisciplines" value="2" class="sheet-helpdisciplines-fake sheet-hd2"/><input type="checkbox" name="helpdisciplines" value="3" class="sheet-helpdisciplines-fake sheet-hd3"/><input type="checkbox" name="helpdisciplines" value="4" class="sheet-helpdisciplines-fake sheet-hd4"/><input type="checkbox" name="helpdisciplines" value="5" class="sheet-helpdisciplines-fake sheet-hd5"/><input type="checkbox" name="helpdisciplines" value="6" class="sheet-helpdisciplines-fake sheet-hd6"/><input type="checkbox" name="helpdisciplines" value="7" class="sheet-helpdisciplines-fake sheet-hd7"/><input type="checkbox" name="helpdisciplines" value="8" class="sheet-helpdisciplines-fake sheet-hd8"/><input type="checkbox" name="helpdisciplines" value="9" class="sheet-helpdisciplines-fake sheet-hd9"/><input type="checkbox" name="helpdisciplines" value="10" class="sheet-helpdisciplines-fake sheet-hd10"/>
+                       		<div class="sheet-hd1-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Murmures sauvages</span> : Permet de discuter avec les animaux et leur donner un ordre</p>
+									<ul><li><strong><u>Coût</u></strong> : -</li>
+										<li><strong><u>Jet</u></strong> : Manipulation + Animaux + Animalisme</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : Scène, un ordre transmis à un animal peut persister jusqu’à une nuit</li></ul>
+								
+									<p><span class="disc disc2"></span><span class="sheet-helpdisciplines-display-name">Éveiller le familier</span> : En donnant un peu de votre Vitae à un animal vidé de son sang, vous pouvez l’imprégner d’un fragment de votre essence crépusculaire.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Jet</u></strong> : -</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : (Puissance de sang x Vigueur de l’animal) nuits</li></ul>
+									
+									<p><span class="disc disc3"></span><span class="sheet-helpdisciplines-display-name">Convoquer la chasse</span> : Vous imprégnez une partie de votre Vitae de l’essence de votre proie, ce qui la rend irrésistible pour les autres prédateurs et les charognards. Où que vous répandiez votre sang, que ce soit sur le sol, sur un objet ou même en éclaboussant quelqu’un, les animaux que vous appelez tenteront de le consommer</p>
+									<ul><li><strong><u>Coût</u></strong> : 2 Vitae</li>
+										<li><strong><u>Jet</u></strong> : Présence + Animaux + Animalisme</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : Une nuit, ou jusqu’à ce que l’objet imprégné de sang soit détruit.</li></ul>
+
+									<p><span class="disc disc4"></span><span class="sheet-helpdisciplines-display-name">Infection sauvage</span> : Les animaux deviennent enragés en sentant l’odeur de votre sang, et les hommes risquent d’en perdre la raison, en particulier s’ils ont récemment été touchés par votre sang. Les autres Damnés témoins des effets de l’Infection sauvage reconnaissent là la Bête déchaînée</p>
+									<ul><li><strong><u>Coût</u></strong> : 2 Vitae</li>
+										<li><strong><u>Jet</u></strong> : Présence + Intimidation + Animalisme</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : Scène</li></ul>
+									<p><span class="disc disc5"></span><span class="sheet-helpdisciplines-display-name">Maître des lieux</span> : Vous marquez votre territoire à l'aide de votre Vitae. Vous avez ainsi connaissance de tout ce qui s’y passe. Vous pouvez y contrôler les animaux, y convoquer des individus ou les en bannir, et forcer les autres Vampires à quitter les lieux.</p>
+									<ul><li><strong><u>Coût</u></strong> : 3-9 Vitae et 1 Volonté</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : 1 semaine par point de Puissance de sang, plus longtemps si vous restez sur votre territoire.</li></ul>
+									</div>
+							</div>
+								<div class="sheet-hd2-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Instinct bestial</span> : La Bête détecte des détails inaccessibles aux sens ordinaires, vous pouvez savoir si quelqu’un est sur le point de vous attaquer ou localiser la personne la plus faible alentour.</p>
+									<ul><li><strong><u>Coût</u></strong> : Première utilisation par scène gratuite, chaque utilisation suivante coûte 1 Vitae.</li>
+										<li><strong><u>Jet</u></strong> : Astuce + Empathie + Auspex</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+									</ul>
+								
+									<p><span class="disc disc2"></span><span class="sheet-helpdisciplines-display-name">Perceptions extraordinaires</span> : Vous vous concentrez sur un seul sujet et percez la vérité sous les couches de mensonges et de faux-semblants.</p>
+									<ul><li><strong><u>Coût</u></strong> : Première utilisation par scène gratuite, chaque utilisation suivante coûte 1 Vitae.</li>
+										<li><strong><u>Jet</u></strong> : Intelligence + Empathie + Auspex</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+									</ul>
+									
+									<p><span class="disc disc3"></span><span class="sheet-helpdisciplines-display-name">Toucher de l’esprit</span> : Vous pouvez concentrer les sens de la Bête sur un objet ou un lieu afin de dévoiler les secrets et de dissiper les mensonges, comme dans le cas d’un individu. Vous ne pouvez utiliser cette Discipline sur le même objet qu’une fois par scène.</p>
+									<ul>
+										<li><strong><u>Jet</u></strong> : Astuce + Occultisme + Auspex</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+									</ul>
+
+									<p><span class="disc disc4"></span><span class="sheet-helpdisciplines-display-name">Ouvrir l’esprit</span> : Permet de lire dans l'esprit de la cible, et d'en extirper un souvenir.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Jet</u></strong> : Intelligence + Entregent + Auspex contre Résolution + Puissance de sang</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : Scène</li></ul>
+									<p><span class="disc disc5"></span><span class="sheet-helpdisciplines-display-name">Projection crépusculaire</span> : Votre esprit se libère du carcan de votre corps et vous projetez vos sens dans le monde. Votre forme astrale existe sous un état spectral, sans substance physique ni spirituelle, mais toujours présente sur ce plan et détectable uniquement par les Vampires dotés d’Auspex.</p>
+									<ul><li><strong><u>Coût</u></strong> : 2 Vitae</li>
+										<li><strong><u>Jet</u></strong> : Intelligence + Occultisme + Auspex</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+									</ul>
+
+								</div>
+        	                </div>
+							<div class="sheet-hd3-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Présence terrifiante</span> : Vous déployez une aura troublante et tous ceux qui vous entourent ont l’impression que le monde se déforme. Même s’ils vous remarquent à peine, ils ressentent une onde de crainte et d’incertitude. Le monde leur paraît plus froid, et tout leur semble un peu plus distant.
+									<br /> => Vos points de Cauchemar s'ajoutent à vos jets d'Intimidation pendant la scène.
+									<br /> => Vos victimes ne peut dépenser un point de Volonté que pour se protéger, pas améliorer son action.
+									<br /> => Vous pouvez faire apparaitre de brêves illusions.
+									</p>
+									<p><span class="disc disc2"></span><span class="sheet-helpdisciplines-display-name">Visage bestial</span> : Si vous savez ce que craint la victime, vous pouvez choisir d’intensifier cette peur spécifique. Sinon, vous suscitez une terreur vague qui naît sans qu’elle sache précisément ce qui l’angoisse à ce point. Quoi qu’il en soit, la victime s’enfuit immédiatement (état Terrifié).</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Jet</u></strong> : Présence + Empathie + Cauchemar contre Calme + Puissance de sang</li>
+										<li><strong><u>Action</u></strong> : Opposée, la résistance se fait par réflexe</li>
+										<li><strong><u>Durée</u></strong> : -</li></ul>
+									
+									<p><span class="disc disc3"></span><span class="sheet-helpdisciplines-display-name">Grande illusion</span> : En effleurant l’esprit de la victime, vous déclenchez une illusion que vous seul pouvez comprendre (état Illusionné).</p>
+									<ul><li><strong><u>Coût</u></strong> : 2 Vitae</li>
+										<li><strong><u>Jet</u></strong> : Manipulation + Empathie + Cauchemar contre Calme + Puissance de sang</li>
+										<li><strong><u>Action</u></strong> : Opposée, la résistance se fait par réflexe</li>
+										<li><strong><u>Durée</u></strong> : 1 nuit</li></ul>
+
+									<p><span class="disc disc4"></span><span class="sheet-helpdisciplines-display-name">Cauchemar éveillé</span> : Vous pouvez susciter des hallucinations troublantes dignes de ce que vit un Vampire en torpeur.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Jet</u></strong> : Présence + Empathie + Cauchemar contre la plus haute valeur de Calme + Puissance de sang du groupe</li>
+										<li><strong><u>Action</u></strong> : Opposée, la résistance se fait par réflexe</li>
+										<li><strong><u>Durée</u></strong> : Scène</li></ul>
+									<p><span class="disc disc5"></span><span class="sheet-helpdisciplines-display-name">Terreur mortelle</span> : Vous pouvez faire surgir d’horribles visions des tréfonds de l’âme de votre victime. Vous déformez tout ce qui l’entoure pour matérialiser une de ses pires terreurs. La victime perd le sommeil, ses cheveux blanchissent, il arrive même que son coeur s’arrête. Vous ne pouvez pas invoquer la terreur à partir de rien ; la victime doit déjà être apeurée.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae et 1 Volonté</li>
+										<li><strong><u>Jet</u></strong> : Présence + Intimidation + Cauchemar - Calme de la victime</li>
+										<li><strong><u>Action</u></strong> : vous devez avoir infligé l’État Terrifié ou Illusionné à la victime</li>
+									</ul>
+
+								</div>
+        	                </div>
+							<div class="sheet-hd4-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet Persistant</span> : Ajoutez vos points de Célérité à votre Défense, ou à votre jet d’Esquive lorsque vous vous défendez activement. 
+									Si une attaque d’Armes à feu vous prive de votre Défense, l’assaillant subit malgré tout un malus à son attaque égal à vos points de Célérité.
+									</p>
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet Actif</span> : Vous pouvez vous placer immédiatement en tête d’Initiative. Cet avantage ne dure qu’un tour, au terme duquel on revient à l’ordre initial. Si plusieurs Vampires tentent simultanément de se placer en tête, on procède à une Confrontation mentale (p. 125) dont le vainqueur agit le premier.
+									</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Durée</u></strong> : 1 tour</li></ul>
+									<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet actif</span> : Vous pouvez interrompre l’action d’un autre joueur en effectuant vous-même une brève action. Vous pouvez <strong>attaquer</strong>, ce qui vous permet de neutraliser un adversaire en pleine action. Vous pouvez vous <strong>déplacer</strong>, et ainsi éviter d’être blessé en vous plaçant hors de portée. Vous pouvez effectuer toute autre <strong>action instantanée</strong>, comme activer une Discipline ou esquiver. 
+										<br />Vous restez toutefois limité à une seule action instantanée par tour. Vous ne pouvez pas utiliser Céléritépour porter deux attaques, ni une seule suivie d’une autre action instantanée.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1</li>
+										<li><strong><u>Action</u></strong> : 1 tour</li>
+									</ul>
+									<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet actif</span> : Multiplier votre Vitesse par vos points de Célérité plus 1. Vous effectuez un déplacement brusque, donnant presque l’impression de passer d’un point à l’autre instantanément.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1</li>
+										<li><strong><u>Action</u></strong> : 1 tour</li>
+									</ul>
+								</div>
+        	                </div>	
+						<div class="sheet-hd5-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Hypnose</span> : Il vous suffit de capter le regard de votre victime pour l’asservir. Le contrôle que vous exercez ne saute pas aux yeux : vous demandez simplement quelque chose à la victime, et elle obtempère (état Hypnotisé).
+									</p>
+									<ul><li><strong><u>Coût</u></strong> : -</li>
+										<li><strong><u>Jet</u></strong> : Intelligence + Expression + Domination contre Résolution + Puissance de sang</li>
+										<li><strong><u>Action</u></strong> : instantanée</li>
+										<li><strong><u>Durée</u></strong> : -</li></ul>
+
+									<p><span class="disc disc2"></span><span class="sheet-helpdisciplines-display-name">Édit de fer</span> : Vous pouvez désormais donner des ordres plus longs à une victime Hypnotisée : ils peuvent faire jusqu’à trois phrases et représenter un enchaînement d’actions. Il vous faut deux tours pour transmettre chaque phrase de l’ordre (état Dominé).</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Condition</u></strong> : Vous devez avoir infligé l’État Hypnotisé à la victime</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : jusqu'au levé du soleil</li></ul>
+									
+									<p><span class="disc disc3"></span><span class="sheet-helpdisciplines-display-name">Ordre dormant</span> : Implantation d'un déclencheur dans le subconscient de la victime.</p>
+									<ul><li><strong><u>Condition</u></strong> : Vous devez avoir infligé l’État Hypnotisé à la victime</li>
+										<li><strong><u>Jet</u></strong> : Intelligence + Subterfuge + Domination - Résolution de la victime</li>
+										<li><strong><u>Action</u></strong> : instantanée</li>
+										<li><strong><u>Durée</u></strong> : 1 semaine par succès</li></ul>
+
+									<p><span class="disc disc4"></span><span class="sheet-helpdisciplines-display-name">Esprit trompeur</span> : Modifier les souvenirs d'une victime.</p>
+									<ul><li><strong><u>Coût</u></strong> : 2 Vitae</li>
+										<li><strong><u>Condition</u></strong> : vous devez avoir infligé l’État Hypnotisé à la victime, et l’oindre d’1 Vitae ou la lui faire consommer (compris dans le coût)</li>
+										<li><strong><u>Action</u></strong> : instantanée</li>
+										<li><strong><u>Durée</u></strong> : Permanent</li></ul>
+									<p><span class="disc disc5"></span><span class="sheet-helpdisciplines-display-name">Possession</span> : Vous transférez votre esprit dans la victime et vous servez de son enveloppe charnelle comme si c’était la vôtre.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae et 1 Volonté</li>
+										<li><strong><u>Jet</u></strong> : Intelligence + Intimidation + Domination - Résolution de la victime</li>
+										<li><strong><u>Condition</u></strong> : vous devez avoir infligé l’État Hypnotisé à la victime</li>
+										<li><strong><u>Action</u></strong> : réflexe</li>
+										<li><strong><u>Durée</u></strong> : 1 nuit par succès</li>
+									</ul>
+
+								</div>
+        	                </div>
+						<div class="sheet-hd6-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Révérence</span> : Ce pouvoir focalise toute l’attention sur vous, même dans une pièce bondée. Vous devenez la personne la plus importante, celle que tout le monde veut côtoyer.
+										<br />Vous ne subissez plus de malus dus à vos actes ou à votre apparence aux jets Sociaux, et vous ajoutez vos points de Majesté à tous vos jets de Présence.
+									</p>
+									<ul>
+										<li><strong><u>Action</u></strong> : instantanée</li>
+										<li><strong><u>Durée</u></strong> : Scène</li></ul>
+
+									<p><span class="disc disc2"></span><span class="sheet-helpdisciplines-display-name">Confident</span> : Vous n’avez pas besoin de crier pour vous faire entendre, et dans une foule qui vous témoigne déjà de la Révérence, parler doucement peut être le meilleur moyen d’attirer l’attention.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Condition</u></strong> : Vous devez avoir infligé l’État Hypnotisé à la victime</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : jusqu'au levé du soleil</li></ul>
+									
+									<p><span class="disc disc3"></span><span class="sheet-helpdisciplines-display-name">Regard obsédant</span> : Une victime de ce niveau de Majesté recherche tellement à capter votre attention qu’elle se comporte en droguée.
+									<br />Vous pouvez altérer l'état émotionnel de la cible, et lui demander d'excuter une tâche, qui deviendra pour lui un besoin obsessionnel.</p>
+									<ul>
+										<li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Condition</u></strong> : Vous devez avoir infligé l’État Charmé ou Dévoué à la cible</li>
+										<li><strong><u>Action</u></strong> : Réflexe</li>
+										<li><strong><u>Durée</u></strong> : Scène</li>
+										</ul>
+
+									<p><span class="disc disc4"></span><span class="sheet-helpdisciplines-display-name">Loyauté</span> : Une victime fera tout pour vous ; la simple perspective de vous contrarier la traumatise. Elle ignore ses autres amis et sa famille. Il n’y a plus que vous qui comptez (état Dévoué).</p>
+									<ul><li><strong><u>Coût</u></strong> : 2 Vitae</li>
+										<li><strong><u>Condition</u></strong> : vous devez avoir infligé l’État Charmé à la cible.</li>
+										<li><strong><u>Jet</u></strong> : Manipulation + Empathie + Majesté contre Résolution + Puissance de sang</li>
+										<li><strong><u>Action</u></strong> : Opposée, la résistance se fait par réflexe</li></ul>
+									<p><span class="disc disc5"></span><span class="sheet-helpdisciplines-display-name">Idole</span> : Avec Idole, l’aura de supériorité conférée par Révérence atteint des sommets divins (ou blasphématoires). Quiconque est affecté par votre pouvoir Révérence doit réussir un jet réflexe de Résolution + Puissance de sang - vos points de Majesté pour entreprendre une action susceptible de vous nuire, et les personnages en votre présence et à qui vous avez infligé l’État Charmé doivent faire un jet réflexe de Résolution + Puissance de sang - vos points de Majesté lorsque vous activez Idole. Ceux qui échouent subissent l’État Dévoué jusqu’à la fin de la scène.</p>
+									<ul><li><strong><u>Coût</u></strong> : 2 Vitae et 1 Volonté</li>
+										<li><strong><u>Action</u></strong> : réflexe</li>
+										<li><strong><u>Durée</u></strong> : Scène</li>
+									</ul>
+
+								</div>
+        	                </div>
+						<div class="sheet-hd7-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Quidam</span> : Vous pouvez résorber votre aura prédatrice et vous déplacer incognito parmi la foule. Tant que vous ne faites rien pour attirer l’attention, personne ne vous remarque.
+										<br />Si vous faites quoi que ce soit susceptible d’attirer l’attention, ceux qui vous entourent doivent réussir un jet d’Astuce + Calme - Occultation pour remarquer. Votre aura prédatrice semble disparaître, les autres Vampires ne peuvent plus la sentir.
+									</p>
+									<ul>
+										<li><strong><u>Action</u></strong> : instantanée</li>
+										<li><strong><u>Durée</u></strong> : Scène</li></ul>
+
+									<p><span class="disc disc2"></span><span class="sheet-helpdisciplines-display-name">Toucher de l’ombre</span> : D’un seul contact, vous pouvez attribuer l’effet de Quidam à un objet ou à un animal plutôt qu’à vous-même.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Condition</u></strong> : Toucher l’objet à dissimuler (ou jet pour toucher si cible non consentante). La Taille la cible ne doit pas dépasser la vôtre.</li>
+										<li><strong><u>Jet</u></strong> : Astuce + Larcin + Occultation</li>
+										<li><strong><u>Action</u></strong> : Réflexe</li>
+										<li><strong><u>Durée</u></strong> : Scène</li></ul>
+									
+									<p><span class="disc disc3"></span><span class="sheet-helpdisciplines-display-name">Manteau de nuit</span> : Vous disparaissez complètement des regards et des esprits. Plus de son ni odeur, mais certains signes trahissent votre passage (fumée, parquet qui grince). Vous pouvez transmettre cet effet à autrui grâce à Toucher de l’ombre.
+									<br />
+										Si vous attaquez quelqu’un ou si vous criez, le Manteau vous dissimule et ajoute vos points d’Occultation au jet de surprise. Seule la victime que vous agressez peut vous percevoir.
+									<br />
+										Pour vous pister : action étendue Astuce + Résolution - Occultation + Puissance de sang contre votre total d’Astuce + Furtivité + Occultation.
+									</p>
+									<ul>
+										<li><strong><u>Coût</u></strong> : 1 Vitae</li>
+									</ul>
+
+									<p><span class="disc disc4"></span><span class="sheet-helpdisciplines-display-name">Étranger familier</span> : Vous pouvez modifier la façon dont les autres vous voient. Peut se combiner avec avec les autres disciplines.
+									</p>
+									<ul><li><strong><u>Coût</u></strong> : 2 Vitae</li></ul>
+									<p><span class="disc disc5"></span><span class="sheet-helpdisciplines-display-name">Oubliette</span> : Vous créez une sorte d’univers de poche pour dissimuler un lieu aux sens ordinaires et brouiller les perceptions de ceux qui s’y trouvent. Vous pouvez utiliser Toucher de l’ombre, Manteau de nuit et Étranger familier sur n’importe quel objet ou créature situé dans votre havre, et ce à n’importe quelle distance.</p>
+									<ul><li><strong><u>Coût</u></strong> : 3-9 Vitae et 1 Volonté</li>
+										<li><strong><u>Condition</u></strong> : Vous devez répandre votre Vitae autour du lieu dont vous souhaitez vous emparer, en marquant l’entrée, les sorties et les points importants.</li>
+										<li><strong><u>Durée</u></strong> : 1 semaine par point de Puissance de sang</li>
+									</ul>
+
+								</div>
+        	                </div>
+						<div class="sheet-hd8-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Tombe invisible</span> : Vous vous fondez dans le sol et devenez presque invulnérable. Vous pouvez demeurer indéfiniment dans un cocon de terre jusqu’à ce que l’heure vienne pour vous d’émerger à la surface.
+										<br />Vous subissez 1 point de dégât contondant pour chaque point de Structure que perd votre refuge.
+									</p>
+									<ul>
+										<li><strong><u>Coût</u></strong> : variable ; 0 pour de la terre, sinon un nombre de Vitae égal à la Solidité du matériau</li>
+										<li><strong><u>Action</u></strong> : instantanée</li>
+										<li><strong><u>Condition</u></strong> : votre cachette doit être au moins de la même Taille que vous</li></ul>
+
+									<p><span class="disc disc2"></span><span class="sheet-helpdisciplines-display-name">Aspect du prédateur</span> : la Bête transcende votre enveloppe charnelle pour lui donner une forme monstrueuse (griffes, crocs, etc.).</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Action</u></strong> : Réflexe</li>
+										<li><strong><u>Formes</u></strong> : Aquatique (vitesse égale dans l'eau), Escalade (pas de jet de Sports), Griffes (+1 létal avec Bagarre), Patagia (planer), Quadrupède (+4 Vitesse), Queue, Sens animal, ...</li>
+										<li><strong><u>Durée</u></strong> : Scène</li></ul>
+									
+									<p><span class="disc disc3"></span><span class="sheet-helpdisciplines-display-name">Peau de bête</span> : Votre corps se métamorphose jusqu’à ressembler à un animal consommé.<br />Sous forme animale, vous utilisez les Attributs et Compétences Physiques de la bête, ainsi que sa Taille, sa Vitesse et sa Santé.</p>
+									<ul>
+										<li><strong><u>Coût</u></strong> : 2 Vitae</li>
+										<li><strong><u>Action</u></strong> : Instantanée</li>
+										<li><strong><u>Durée</u></strong> : indéfinie</li>
+									</ul>
+
+									<p><span class="disc disc4"></span><span class="sheet-helpdisciplines-display-name">Aspect surnaturel</span> : Vous développez des mutations horribles.
+									</p>
+									<ul>
+										<li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Formes</u></strong> : Ailes, Mains barbelés, mains crochues, peau caoutchouc, serres cruelles</li>
+										<li><strong><u>Durée</u></strong> : Scène</li>
+									</ul>
+									<p><span class="disc disc5"></span><span class="sheet-helpdisciplines-display-name">Miasme primal</span> : La Bête jaillit de votre corps qu’elle dissout dans un nuage de fumée vorace. Seule une cloison parfaitement hermétique peut vous empêcher de passer, et rien de physique ne peut vous blesser.<br />Vous pouvez vous condenser à votre Taille humaine ou vous dilater sous forme d’un nuage d’une Taille maximale de (Protéisme + Puissance de sang) mètres de diamètre</p>
+									<ul><li><strong><u>Coût</u></strong> : 3 Vitae</li>
+										
+									</ul>
+
+								</div>
+        	                </div>
+						<div class="sheet-hd9-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet Persistant</span> : Ajoutez vos points de Puissance à votre Force, ce qui permet de lui faire dépasser le seuil imposé par votre Puissance de sang. De plus, un jet de Force + Sports vous permet de sauter d’un nombre de mètres égal à (Puissance +1) x nombre de succès.
+									</p>
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet Actif</span> : Ajoutez vos points de Puissance en tant que bonus d’arme à toute attaque utilisant Sports, Bagarre ou Armes blanches. Les armes utilisées risquent d’en souffrir, en particulier si elles ne sont pas conçues pour porter des coups violents (-1 Solidité).
+									</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Durée</u></strong> : 1 tour</li></ul>
+									<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet actif</span> : Vous pouvez soulever et projeter des objets normalement trop peu maniables pour servir d’arme, comme des rochers, des voitures et des individus. Tout objet que vous pouvez soulever, et dont la Taille n’excède pas votre Force, peut être utilisé en tant qu’arme de corps à corps ou de jet improvisée.<br />Les objets infligent des dégâts létaux aux mortels si leur Taille est supérieure à 5, et même aux Vampires si leur Taille est supérieure à 9.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Action</u></strong> : 1 tour</li>
+									</ul>
+								</div>
+        	                </div>
+						<div class="sheet-hd10-display">
+                        		<div class="sheet-helpdisciplines-display-desc">
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet Persistant</span> : Ajoutez vos points de Résilience à votre Vigueur, ce qui peut l’amener au-dessus du seuil imposé par votre Puissance de sang. Dès que vous subissez des dégâts aggravés, transformez-en 1 point en dégât létal par point de Résilience que vous possédez. Cet effet s’applique au feu et à tout fléau éventuel, mais pas au soleil.</p>
+	                        		<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet Actif</span> : Soustrayez (Résilience + 1) des dégâts occasionnés par quelque source de dégâts que ce soit, hormis vos fléaux. Cet effet fonctionne comme une armure, mais n’amoindrit pas les signes visuels et superficiels des blessures.	<br />Toutes les blessures superficielles peuvent être entièrement guéries au prix d’1 Vitae la prochaine fois que vous dormez.
+									</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Durée</u></strong> : 1 tour</li></ul>
+									<p><span class="disc disc1"></span><span class="sheet-helpdisciplines-display-name">Effet actif</span> : Soustrayez vos points de Résilience de tous les dégâts occasionnés par le feu ou les fléaux acquis. Le pouvoir de Résilience ne peut toutefois rien contre le soleil.</p>
+									<ul><li><strong><u>Coût</u></strong> : 1 Vitae</li>
+										<li><strong><u>Action</u></strong> : 1 tour</li>
+									</ul>
+								</div>
+        	                </div>
+						</div>
+					</div>
+					<div class="sheet-twohalf">
+						<div class="sheet-header sheet-bgonethird">Actions standards</div>
+						<div class="sheet-break sheet-height10"></div>
+							<div class="sheet-standardactions-title">Baratin</div>
+							<div class="sheet-standardactions-throw">Manipulation + Subterfuge – Calme de la victime</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Discrétion</div>
+							<div class="sheet-standardactions-throw">Dextérité + Furtivité</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Discussion</div>
+							<div class="sheet-standardactions-throw">Intelligence + Expression – Résolution de la victime</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Examiner un lieu</div>
+							<div class="sheet-standardactions-throw">Intelligence + Investigation</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Faire la Noce</div>
+							<div class="sheet-standardactions-throw">Présence + Entregent ou Expérience de la rue</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Filature</div>
+							<div class="sheet-standardactions-throw">Astuce + Furtivité ou Conduite</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Interrogatoire</div>
+							<div class="sheet-standardactions-throw">Manipulation + Empathie ou Intimidation – Résolution de la victime</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Intimidation</div>
+							<div class="sheet-standardactions-throw">Force ou Manipulation + Intimidation – Calme de la victime</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Recherche</div>
+							<div class="sheet-standardactions-throw">Intelligence + Érudition ou Occultisme</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">Réparation</div>
+							<div class="sheet-standardactions-throw">Intelligence + Artisanat</div>
+							<div class="sheet-break"></div>
+						<div class="sheet-header sheet-bgonethird">Combat</div>
+						<div class="sheet-break sheet-height10"></div>
+							<div class="sheet-standardactions-title">1. Initiative</div>
+							<div class="sheet-standardactions-throw">1D10 + modificateur d'initiative</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">2A. Attaque à mains nues</div>
+							<div class="sheet-standardactions-throw">Force + Bagarre – Défense de la victime</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">2B. Attaque armée</div>
+							<div class="sheet-standardactions-throw">Force + Armes blanches – Défense de la victime</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">2C. Attaque à distance</div>
+							<div class="sheet-standardactions-throw">Dextérité + Armes à feu</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">2D. Attaque à l'arme de jet</div>
+							<div class="sheet-standardactions-throw">Dextérité + Sports – Défense</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">3. Esquive</div>
+							<div class="sheet-standardactions-throw">Action du tour => esquiver. Défense x2, succès otés du résultat d'attaque</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">4. Défense</div>
+							<div class="sheet-standardactions-throw">Défense décrémentée à chaque attaque après la première</div>
+							<div class="sheet-break"></div>
+							<div class="sheet-standardactions-title">5. Dégâts</div>
+							<div class="sheet-standardactions-throw">Succès restants convertis en dégâts.</div>
+							<div class="sheet-break"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+
 <script>
-	function mychange(selectObject) {
+	function mychange(selectObject, target="etat") {
 		var value = selectObject.value;
 		var n = selectObject.name;
 		a = document.getElementsByName(n);
 		for(i = 0;i < a.length;i++) {a[i].checked = false;}
-		a = document.querySelector('input[name="'+n+'"].sheet-etat'+value);
+		a = document.querySelector('input[name="'+n+'"].sheet-'+target+value);
 		console.log(a);
 		a.checked = true;
   	}
